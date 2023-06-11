@@ -55,7 +55,7 @@ const Home = () => {
               height={120}
               alt="Holder"
             />
-            <div className="w-32 h-32 bg-purple-200 rounded-full flex justify-center items-center text-2xl text-gray-700">
+            <div className="w-32 h-32 bg-purple-200 rounded-full flex justify-center items-center text-2xl text-gray-700 font-kcc">
               가 보 자 고
             </div>
           </div>
