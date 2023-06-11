@@ -14,9 +14,9 @@ const Home = () => {
   };
 
   return (
-    <div className="max-w-screen-md mx-auto shadow-lg min-h-screen text-black font-bold font-kcc">
+    <div className="max-w-screen-md mx-auto shadow-lg min-h-screen text-black font-bold">
       <header className="px-4 py-2 flex justify-between items-center w-full h-fit shadow-sm">
-        <div className="text-xl">가 보 자 고 !</div>
+        <div className="text-xl font-kcc">가 보 자 고 !</div>
         <div className="text-sm">
           <button className=" text-purple-500 hover:text-purple-300">
             가보자고?
