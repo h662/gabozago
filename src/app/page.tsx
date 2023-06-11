@@ -84,7 +84,7 @@ const Home = () => {
               <div>
                 <Image
                   className="rounded-full"
-                  src="/images/1.png"
+                  src="/images/2.png"
                   width={120}
                   height={120}
                   alt="Holder"
@@ -96,7 +96,7 @@ const Home = () => {
               <div>
                 <Image
                   className="rounded-full"
-                  src="/images/1.png"
+                  src="/images/3.png"
                   width={120}
                   height={120}
                   alt="Holder"
@@ -184,7 +184,7 @@ const Home = () => {
         </div>
       </main>
 
-      <footer></footer>
+      <footer className="mt-16"></footer>
     </div>
   );
 };
