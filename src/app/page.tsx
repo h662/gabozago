@@ -3,41 +3,63 @@
 import Image from "next/image";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { Link, Element } from "react-scroll";
+
 import TeamCard from "@/components/TeamCard";
 import RoadmapCard from "@/components/RoadmapCard";
 
 const Home = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-  };
-
   return (
     <div className="max-w-screen-md mx-auto shadow-lg min-h-screen text-black font-bold">
-      <header className="px-4 py-2 flex justify-between items-center w-full h-fit shadow-sm">
-        <div className="text-xl font-kcc">가 보 자 고 !</div>
-        <div className="text-sm">
-          <button className=" text-purple-500 hover:text-purple-300">
-            가보자고?
-          </button>
-          <button className="ml-2 text-purple-500 hover:text-purple-300">
-            스토리
-          </button>
-          <button className="ml-2 text-purple-500 hover:text-purple-300">
-            로드맵
-          </button>
-          <button className="ml-2 text-purple-500 hover:text-purple-300">
-            팀
-          </button>
+      <header className="bg-white sticky top-0 z-10  w-full h-fit shadow-sm">
+        <div className="text-xs text-center bg-red-600 text-white hidden sm:block">
+          이 페이지는 모바일 사이즈에 최적화 되어있습니다.
+        </div>
+        <div className="flex justify-between items-center px-4 py-2">
+          <div className="text-xl font-kcc">가 보 자 고 !</div>
+          <div className="text-sm">
+            <Link to="intro" smooth={true}>
+              <button className=" text-purple-500 hover:text-purple-300">
+                가보자고?
+              </button>
+            </Link>
+            <Link to="story" smooth={true}>
+              <button className="ml-2 text-purple-500 hover:text-purple-300">
+                스토리
+              </button>
+            </Link>
+            <Link to="roadmap" smooth={true}>
+              <button className="ml-2 text-purple-500 hover:text-purple-300">
+                로드맵
+              </button>
+            </Link>
+            <Link to="team" smooth={true}>
+              <button className="ml-2 text-purple-500 hover:text-purple-300">
+                팀
+              </button>
+            </Link>
+          </div>
         </div>
       </header>
 
-      <main className="px-2">
-        <div className="flex flex-col items-center mt-8">
+      <main>
+        <div className="relative">
+          <Image
+            className=""
+            src="/images/coffee.png"
+            width={564}
+            height={846}
+            alt="coffee"
+          />
+        </div>
+        <Element name="intro" className="flex flex-col items-center mt-8 px-2">
           <div className="w-full text-sm">
-            WEB3 프로젝트 &apos;가보자고&apos;는
-            <br /> 로컬 맛집 활성화를 위해 탄생하였습니다.
+            가보자고(gabozago)는 ‘더 맛있는 것을 쫓는’ 사람들을 위해
+            태어났습니다.
+          </div>
+          <div className="w-full text-sm mt-4">
+            가보자고(gabozago)는 NFT민팅을 통해 신메뉴 개발의 과정에서
+            외식업체와 이용자를 이어주는 WEB 3플랫폼입니다.
           </div>
           <div className="mt-4">
             <Image
@@ -59,19 +81,23 @@ const Home = () => {
               가 보 자 고
             </div>
           </div>
-          <div className="w-full mt-4 text-sm">
-            NFT 홀더들에게 지역기반의 숨은 찐 맛집을 소개하고,
-            <br />
-            식당은 Web3 커뮤니티 기반으로 마케팅 활동을 할 수 있습니다.
+          <div className="w-full text-sm mt-4">
+            메뉴 개발부터 마케팅까지, 신메뉴 개발에 들어가는 막대한 비용 부담을
+            낮추어 외식업체에게 도움을 주고, 항상 새롭고 트렌디한 메뉴를
+            찾아다니는 이용자들의 니즈를 충족시켜줍니다.
           </div>
-        </div>
-        <div className="mt-8">
+          <div className="w-full text-sm mt-4">
+            신메뉴는 F&B의 성장 동력이면서 아이덴티티 입니다. <br />
+            가보자고(gabozago)는 음식이 갖고있는 가치와 스토리를 전달하고
+            온/오프라인을 연계함으로써 경험의 확장을 돕고자 합니다.
+          </div>
+        </Element>
+        <Element name="story" className="mt-8 px-2">
           <div className="text-2xl mb-4">스토리</div>
           <div className="-mx-2">
             <Carousel>
               <div>
                 <Image
-                  className="rounded-full"
                   src="/images/1.png"
                   width={120}
                   height={120}
@@ -83,7 +109,6 @@ const Home = () => {
               </div>
               <div>
                 <Image
-                  className="rounded-full"
                   src="/images/2.png"
                   width={120}
                   height={120}
@@ -95,7 +120,6 @@ const Home = () => {
               </div>
               <div>
                 <Image
-                  className="rounded-full"
                   src="/images/3.png"
                   width={120}
                   height={120}
@@ -107,8 +131,8 @@ const Home = () => {
               </div>
             </Carousel>
           </div>
-        </div>
-        <div>
+        </Element>
+        <Element name="roadmap px-2">
           <div className="text-2xl mb-4">로드맵</div>
           <div className="text-lg">Pre Season (22.10. ~ 23.04)</div>
           <RoadmapCard
@@ -148,8 +172,8 @@ const Home = () => {
             title="지속적인 업데이트"
             desc="'가보자고'는 멈춰있는 프로젝트가 아닙니다. 지속적인 업데이트와 이벤트를 통해 로컬 맛집 오너들과 가보자고 홀더들에게 혜택이 갈 수 있게 만들어가는 중입니다."
           />
-        </div>
-        <div className="mt-8">
+        </Element>
+        <Element name="team" className="mt-8 px-2">
           <div className="text-2xl mb-4">팀 소개</div>
           <div className="grid grid-cols-2 gap-6 justify-items-center">
             <TeamCard
@@ -181,7 +205,7 @@ const Home = () => {
               position="프론트엔드"
             />
           </div>
-        </div>
+        </Element>
       </main>
 
       <footer className="mt-16"></footer>
