@@ -25,7 +25,7 @@ const Home = () => {
       <main className="px-2">
         <div className="flex flex-col items-center mt-8">
           <div className="w-full">
-            WEB3 프로젝트 '가보자고'는
+            WEB3 프로젝트 "가보자고"는
             <br /> 로컬 맛집 활성화를 위해 탄생하였습니다.
           </div>
           <div className="mt-4">
