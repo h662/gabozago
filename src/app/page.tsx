@@ -1,14 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link, Element } from "react-scroll";
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "animate.css";
+
 import TeamCard from "@/components/TeamCard";
 import RoadmapCard from "@/components/RoadmapCard";
+import { useObserve } from "@/hooks";
 
 const Home = () => {
+  const { isObserved, dom } = useObserve();
+
   return (
     <div className="max-w-screen-md mx-auto shadow-lg min-h-screen text-black font-bold">
       <header className="bg-white sticky top-0 z-10  w-full h-fit shadow-sm">
@@ -18,7 +23,7 @@ const Home = () => {
         <div className="flex justify-between items-center px-4 py-2">
           <Image src="/images/logo.gif" width={125} height={25} alt="Holder" />
           <div className="text-sm">
-            <Link to="intro" smooth={true}>
+            <Link to="intro" smooth={true} offset={-50}>
               <button className=" text-gray-800 hover:text-gray-400">
                 가보자고?
               </button>
@@ -52,46 +57,54 @@ const Home = () => {
             alt="coffee"
           />
         </div>
-        <Element name="intro" className="flex flex-col items-center mt-8 px-2">
-          <div className="w-full text-sm">
-            가보자고(gabozago)는 ‘더 맛있는 것을 쫓는’ 사람들을 위해
-            태어났습니다.
-          </div>
-          <div className="w-full text-sm mt-4">
-            가보자고(gabozago)는 NFT민팅을 통해 신메뉴 개발의 과정에서
-            외식업체와 이용자를 이어주는 WEB 3플랫폼입니다.
-          </div>
-          <div className="mt-4">
-            <Image
-              src="/images/restaurant.png"
-              width={120}
-              height={120}
-              alt="restaurant"
-            />
-          </div>
-          <div className="flex mt-8 gap-8">
-            <Image
-              className="rounded-full"
-              src="/images/1.png"
-              width={120}
-              height={120}
-              alt="Holder"
-            />
-            <div className="w-32 h-32 bg-purple-200 rounded-full flex justify-center items-center text-2xl text-gray-700 font-kcc">
-              가 보 자 고
+        <div
+          ref={dom}
+          className={`${isObserved && "animate__animated animate__fadeIn"}`}
+        >
+          <Element
+            name="intro"
+            className="flex flex-col items-center mt-8 px-2"
+          >
+            <div className="w-full text-sm">
+              가보자고(gabozago)는 ‘더 맛있는 것을 쫓는’ 사람들을 위해
+              태어났습니다.
             </div>
-          </div>
-          <div className="w-full text-sm mt-4">
-            메뉴 개발부터 마케팅까지, 신메뉴 개발에 들어가는 막대한 비용 부담을
-            낮추어 외식업체에게 도움을 주고, 항상 새롭고 트렌디한 메뉴를
-            찾아다니는 이용자들의 니즈를 충족시켜줍니다.
-          </div>
-          <div className="w-full text-sm mt-4">
-            신메뉴는 F&B의 성장 동력이면서 아이덴티티 입니다. <br />
-            가보자고(gabozago)는 음식이 갖고있는 가치와 스토리를 전달하고
-            온/오프라인을 연계함으로써 경험의 확장을 돕고자 합니다.
-          </div>
-        </Element>
+            <div className="w-full text-sm mt-4">
+              가보자고(gabozago)는 NFT민팅을 통해 신메뉴 개발의 과정에서
+              외식업체와 이용자를 이어주는 WEB 3플랫폼입니다.
+            </div>
+            <div className="mt-4">
+              <Image
+                src="/images/restaurant.png"
+                width={120}
+                height={120}
+                alt="restaurant"
+              />
+            </div>
+            <div className="flex mt-8 gap-8">
+              <Image
+                className="rounded-full"
+                src="/images/1.png"
+                width={120}
+                height={120}
+                alt="Holder"
+              />
+              <div className="w-32 h-32 bg-purple-200 rounded-full flex justify-center items-center text-2xl text-gray-700 font-kcc">
+                가 보 자 고
+              </div>
+            </div>
+            <div className="w-full text-sm mt-4">
+              메뉴 개발부터 마케팅까지, 신메뉴 개발에 들어가는 막대한 비용
+              부담을 낮추어 외식업체에게 도움을 주고, 항상 새롭고 트렌디한
+              메뉴를 찾아다니는 이용자들의 니즈를 충족시켜줍니다.
+            </div>
+            <div className="w-full text-sm mt-4">
+              신메뉴는 F&B의 성장 동력이면서 아이덴티티 입니다. <br />
+              가보자고(gabozago)는 음식이 갖고있는 가치와 스토리를 전달하고
+              온/오프라인을 연계함으로써 경험의 확장을 돕고자 합니다.
+            </div>
+          </Element>
+        </div>
         <Element name="story" className="mt-8 px-2">
           <div className="text-2xl mb-4">스토리</div>
           <div className="-mx-2">
@@ -208,7 +221,13 @@ const Home = () => {
         </Element>
       </main>
 
-      <footer className="mt-16"></footer>
+      <footer className="mt-16 px-2 pb-4 text-sm">
+        <div className="font-bold">팀 쩝쩝박사들</div>
+        <div className="mt-1">
+          주소 : 경기도 김포시 김포한강9로75번길 66, 505호
+        </div>
+        <div className="mt-1">이메일 : h662hong@wearablock.com</div>
+      </footer>
     </div>
   );
 };
