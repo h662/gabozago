@@ -16,25 +16,25 @@ const Home = () => {
           이 페이지는 모바일 사이즈에 최적화 되어있습니다.
         </div>
         <div className="flex justify-between items-center px-4 py-2">
-          <div className="text-xl font-kcc">가 보 자 고 !</div>
+          <Image src="/images/logo.gif" width={125} height={25} alt="Holder" />
           <div className="text-sm">
             <Link to="intro" smooth={true}>
-              <button className=" text-purple-500 hover:text-purple-300">
+              <button className=" text-gray-800 hover:text-gray-400">
                 가보자고?
               </button>
             </Link>
             <Link to="story" smooth={true}>
-              <button className="ml-2 text-purple-500 hover:text-purple-300">
+              <button className="ml-2 text-gray-800 hover:text-gray-400">
                 스토리
               </button>
             </Link>
             <Link to="roadmap" smooth={true}>
-              <button className="ml-2 text-purple-500 hover:text-purple-300">
+              <button className="ml-2 text-gray-800 hover:text-gray-400">
                 로드맵
               </button>
             </Link>
             <Link to="team" smooth={true}>
-              <button className="ml-2 text-purple-500 hover:text-purple-300">
+              <button className="ml-2 text-gray-800 hover:text-gray-400">
                 팀
               </button>
             </Link>
@@ -43,7 +43,7 @@ const Home = () => {
       </header>
 
       <main>
-        <div className="relative">
+        <div className="flex justify-center">
           <Image
             className=""
             src="/images/coffee.png"
@@ -132,7 +132,7 @@ const Home = () => {
             </Carousel>
           </div>
         </Element>
-        <Element name="roadmap px-2">
+        <Element name="roadmap" className="px-2">
           <div className="text-2xl mb-4">로드맵</div>
           <div className="text-lg">Pre Season (22.10. ~ 23.04)</div>
           <RoadmapCard
