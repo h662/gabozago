@@ -75,7 +75,7 @@ const Home = () => {
               <div>가보자고(gabozago)는</div>
               <div className="mt-2">NFT민팅을 통해 신메뉴 개발의 과정에서</div>
               <div className="mt-2">
-                쉐프와 이용자를 이어주는 WEB 3플랫폼입니다.
+                셰프와 이용자를 이어주는 WEB 3플랫폼입니다.
               </div>
             </div>
             <div className="mt-32">
@@ -87,10 +87,8 @@ const Home = () => {
               />
             </div>
             <div className="w-full mt-24">
-              <div>메뉴 개발부터 마케팅까지</div>
-              <div className="mt-2">
-                신메뉴 개발에 들어가는 비용 부담을 낮춰 쉐프에게 도움을,
-              </div>
+              <div>신메뉴 개발에 들어가는 비용 부담을 낮춰</div>
+              <div className="mt-2">셰프에게 도움을,</div>
               <div className="mt-2">항상 새롭고 트렌디한 메뉴를 찾아다니는</div>
               <div className="mt-2">이용자들의 니즈를 충족시켜줍니다.</div>
             </div>
@@ -103,7 +101,7 @@ const Home = () => {
                 음식이 갖고있는 가치와 스토리를 전달하고
               </div>
               <div className="mt-2">
-                온/오프라인을 연계함으로써 경험의 확장을 돕고자 합니다.
+                온/오프라인을 연계해 경험의 확장을 돕고자 합니다.
               </div>
             </div>
           </Element>
@@ -114,36 +112,38 @@ const Home = () => {
             <Carousel>
               <div>
                 <Image
-                  src="/images/1.png"
-                  width={120}
-                  height={120}
+                  src="/images/story1.png"
+                  width={240}
+                  height={240}
                   alt="Holder"
                 />
-                <p className="legend">
-                  옛날 옛날에 배고픈 토끼가 살고 있었습니다.
-                </p>
               </div>
               <div>
                 <Image
-                  src="/images/2.png"
-                  width={120}
-                  height={120}
+                  src="/images/story2.png"
+                  width={240}
+                  height={240}
                   alt="Holder"
                 />
-                <p className="legend">
-                  토끼는 지역 로컬 찐 맛집 식당을 찾아냈습니다.
-                </p>
               </div>
               <div>
                 <Image
-                  src="/images/3.png"
-                  width={120}
-                  height={120}
+                  src="/images/story3.png"
+                  width={240}
+                  height={240}
                   alt="Holder"
                 />
-                <p className="legend">
-                  배고픈 토끼는 배부른 토끼가 되었답니다!
-                </p>
+              </div>
+              <div className="relative">
+                <div className="bg-white w-96 h-96 absolute top-0 bg-opacity-70 flex justify-center items-center text-4xl">
+                  To be continued...
+                </div>
+                <Image
+                  src="/images/story3.png"
+                  width={240}
+                  height={240}
+                  alt="Holder"
+                />
               </div>
             </Carousel>
           </div>
